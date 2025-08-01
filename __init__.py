@@ -1,0 +1,15 @@
+"""
+Multi LoRA Stack - A standalone ComfyUI custom node for managing multiple LoRAs
+"""
+
+from .multi_lora_stack import NODE_CLASS_MAPPINGS as FULL_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as FULL_DISPLAY_MAPPINGS
+from .multi_lora_stack_model_only import NODE_CLASS_MAPPINGS as MODEL_ONLY_MAPPINGS, NODE_DISPLAY_NAME_MAPPINGS as MODEL_ONLY_DISPLAY_MAPPINGS
+
+# Combine both node types
+NODE_CLASS_MAPPINGS = {**FULL_MAPPINGS, **MODEL_ONLY_MAPPINGS}
+NODE_DISPLAY_NAME_MAPPINGS = {**FULL_DISPLAY_MAPPINGS, **MODEL_ONLY_DISPLAY_MAPPINGS}
+
+# Web directory for JavaScript files
+WEB_DIRECTORY = "./web"
+
+__all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
